@@ -1,15 +1,16 @@
 package com.br.breno.emailmicroservice.infra.awsses;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
 import com.br.breno.emailmicroservice.adapters.EmailSenderGateway;
 import com.br.breno.emailmicroservice.core.exceptions.EmailServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
+@Qualifier("sesEmaiSender")
 public class SesEmailSender implements EmailSenderGateway {
     private final AmazonSimpleEmailService amazonSimpleEmailService;
     private final String FromEmailAddress;
