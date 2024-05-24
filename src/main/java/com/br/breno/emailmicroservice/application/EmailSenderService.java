@@ -14,7 +14,7 @@ public class EmailSenderService implements EmailServiceCore {
 
     @Autowired
 
-    public EmailSenderService(@Qualifier("sesEmaiSender") EmailSenderGateway emailServiceGateway ,@Qualifier("sendGridEmailSender") EmailSenderGateway sendGridEmailSenderGateway) {
+    public EmailSenderService(@Qualifier("sesEmaiSender") EmailSenderGateway emailServiceGateway, @Qualifier("sendGridEmailSender") EmailSenderGateway sendGridEmailSenderGateway) {
         this.sesEmailSenderGateway = emailServiceGateway;
         this.sendGridEmailSenderGateway = sendGridEmailSenderGateway;
     }
